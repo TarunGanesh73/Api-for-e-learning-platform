@@ -2,6 +2,7 @@ const User = require('./../model/userModel');
 const Course = require('./../model/courseModel');
 const AppError = require('./../utilis/appError');
 const catchAsync = require('./../utilis/catchAsync');
+const sendEmail = require('./../utilis/email');
 
 exports.enroll = catchAsync(async (req, res, next) => {
   const { userId, courseId } = req.body;
@@ -21,6 +22,16 @@ exports.enroll = catchAsync(async (req, res, next) => {
   // Enroll the user in the course
   user.enrolledCourses.push(courseId);
   await user.save();
+
+  // Send email to user email
+
+  const message = `Your successFully enrolled to the ${course.name}`;
+
+  await sendEmail({
+    email: user.email,
+    subject: 'enroll to course',
+    message,
+  });
 
   res.status(200).json({
     status: 'success',

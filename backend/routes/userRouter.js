@@ -6,8 +6,11 @@ const router = express.Router();
 
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
+router.post('/forgotpassword', authController.forgotPassword);
+router.patch('/resetPassword/:token', authController.resetPassword);
+
 router
-  .route('/userProfile/:id')
+  .route('/userprofile/:id')
   .post(userController.uploadPhoto, userController.userProfile);
 
 module.exports = router;

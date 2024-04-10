@@ -1,3 +1,0 @@
- const result = await cloudinary.uploader.upload(req.file.path);
-
-    getUser.photo = result.secure_url;
