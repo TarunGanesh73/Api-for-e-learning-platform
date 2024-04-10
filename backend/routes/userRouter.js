@@ -11,6 +11,10 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 
 router
   .route('/userprofile/:id')
-  .post(userController.uploadPhoto, userController.userProfile);
+  .post(
+    authController.protect,
+    userController.uploadPhoto,
+    userController.userProfile
+  );
 
 module.exports = router;
