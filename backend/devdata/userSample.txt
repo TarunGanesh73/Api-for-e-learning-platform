@@ -4,5 +4,5 @@
   "name": "Your Name" ,
   "email" :"sample email",
   "password" :"give password", // password should contain minimum eight letters , one letter should be upper case , give one special character and number
-  "role" : "give one role"  ,  // the role have two types one is user and super admin , super admin can crud operations for course  , if you did'nt give the role the default will be user
+  "role" : "give one role"  ,  // the role have two types one is user and superadmin , superadmin can crud operations for course  , if you did'nt give the role the default will be user
 }
