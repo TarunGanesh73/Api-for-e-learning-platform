@@ -6,7 +6,7 @@ const catchAsync = require('./../utilis/catchAsync');
 exports.uploadPhoto = upload.single('photo');
 
 exports.userProfile = async (req, res, next) => {
-  const getUser = await User.findById(req.params.id);
+  const getUser = await User.findById(req.params.id).select('-enrolledCourses');
 
   getUser.set(req.body);
 

@@ -31,9 +31,7 @@ const userSchema = new mongoose.Schema(
       validate: [validator.isStrongPassword, 'Password is not strong enough'],
       select: false,
     },
-    enrolledCourses: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Course', select: false },
-    ],
+    enrolledCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
 
     passwordChangedAt: Date,
     passwordResetToken: String,
