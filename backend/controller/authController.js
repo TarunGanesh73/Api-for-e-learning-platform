@@ -20,14 +20,12 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     role: req.body.role,
   });
-  /*
-  const message = `User is successfully registered`;
 
   await sendEmail({
     email: req.body.email,
     subject: 'Welcome to e-learning',
     message,
-  });*/
+  });
 
   res.status(201).json({
     status: 'succees',
