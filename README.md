@@ -9,7 +9,7 @@
 1. #### install npm packages
    1. install backend packages
    ```bash
-   cd mern-ecommerce
+   cd e-learning platform
    npm install
 
  ##### sample code for backend .env
